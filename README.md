@@ -6,7 +6,7 @@
 - Database adminstretor:Mohannad bawazer.
 
 
-![MyTestDiagram](https://github.com/ctiProgramming1/MyTest/blob/main/MyTestDiagram.png "MyTest Diagram")
+![MyTestDiagram](https://github.com/mohannad-java/MyTires/blob/main/resources/%D9%85%D8%AE%D8%B7%D8%B7.PNG")
 
 
 
