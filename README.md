@@ -6,7 +6,7 @@
 - Database adminstretor:Mohannad bawazer.
 
 
-![MyTestDiagram](https://github.com/mohannad-java/MyTires/blob/main/resources/%D9%85%D8%AE%D8%B7%D8%B7.PNG.jpg)
+![MyTestDiagram](https://github.com/mohannad-java/MyTires/blob/main/resources/%D9%85%D8%AE%D8%B7%D8%B73.PNG.jpg)
 
 
 
