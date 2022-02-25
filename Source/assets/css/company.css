@@ -1,0 +1,312 @@
+/* خط قوقل */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;800;900&display=swap');
+
+/* إعادة بناء هيكلة الموقع */
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+a, button
+{
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+html::-webkit-scrollbar
+{
+    width: .5rem;
+}
+
+html::-webkit-scrollbar-thumb
+{
+    background: rgba(236, 29, 29, 1);
+    border-radius: 50px;
+}
+
+body
+{
+    background-color: rgba(35, 35, 35, 0.95);
+}
+
+.heading-title
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* تصميم رأس الصفحة */
+header
+{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    background-color: rgba(37, 37, 37, 1);
+}
+
+.logo img
+{
+    cursor: pointer;
+    width: 150px;
+    position: absolute;
+    top: 0px;
+    right: 3%;
+    margin-top:10px;
+}
+
+.buttons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addProduct
+{
+    padding: 0px 20px;
+    padding-bottom: 5px;
+    margin-left: 30px;
+    background-color: rgba(217, 39, 39, 1);
+    border: none;
+    font-weight: 700;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 3px solid rgba(236, 29, 29, 1);
+    transition: all 0.3s ease 0s;
+}
+
+.name_company
+{
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* تصميم محتوى الصفحة */
+
+.container
+{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.container_product
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card
+{
+    background: rgba(35, 35, 35, 0.19);
+    width: 370px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.card:hover
+{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.card_image
+{
+    height: 320px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+}
+
+.card_image img
+{
+    width: 350px;
+}
+
+.card h2
+{
+    padding: 10px;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}
+
+.card p
+{
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #fff;
+}
+
+.card a
+{
+    background-color: rgba(236, 29, 29, 1);
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 50px;
+    text-decoration: none;
+    border-radius: 40px;
+}
+
+.buttons .update
+{
+    background-color: transparent;
+    border: 2px solid rgba(236, 29, 29, 1);
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 50px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.buttons .delete
+{
+    background-color: rgba(236, 29, 29, 1);
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 50px;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.wrapper
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper .price_content .price,
+.wrapper .qnty_content .qnty
+{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+/* تصميم نهاية الصفحة Footer */
+
+footer
+{
+    width: 100%;
+    position: absolute;
+    background: rgba(37, 37, 37, 1);
+    color:#fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    border-top-right-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.row
+{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col
+{
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3)
+{
+    flex-basis: 15%;
+}
+
+footer .logo
+{
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.col h3
+{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email_id
+{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.soical_icons .fab
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgba(236, 29, 29, 1);
+    background:#fff;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+hr
+{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid rgba(236, 29, 29, 1);
+    margin: 20px auto;
+}
+
+.copyright
+{
+    text-align: center;
+    font-weight: 700;
+}
+.copyright .myTires
+{
+    color:rgba(236, 29, 29, 1);
+}
+
+@media(max-width: 600px)
+{
+    .buttons .addProduct
+    {
+        padding: 0px 10px;
+        padding-bottom: 0;
+        margin-top: 5px;
+        margin-left: 50px;
+        font-size: 10px;
+    }
+}

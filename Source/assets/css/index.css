@@ -1,0 +1,532 @@
+/* خط قوقل */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;800;900&display=swap');
+
+/* إعادة بناء هيكلة الموقع */
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Tajawal', sans-serif;
+}
+
+a, button
+{
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+
+html::-webkit-scrollbar
+{
+    width: .5rem;
+}
+
+html::-webkit-scrollbar-thumb
+{
+    background: rgba(236, 29, 29, 1);
+    border-radius: 50px;
+}
+
+body
+{
+    background-color: rgba(35, 35, 35, 0.95);
+}
+
+.heading-title
+{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* تصميم رأس الصفحة */
+header
+{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    background-color: rgba(37, 37, 37, 1);
+}
+
+.logo img
+{
+    cursor: pointer;
+    width: 150px;
+    position: absolute;
+    top: 0px;
+    right: 3%;
+    margin-top:10px;
+}
+
+.filtr
+{
+    cursor: pointer;
+    width: 40px;
+    position: absolute;
+    top: 8px;
+    right: 17%;
+}
+
+.buttons
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login, .signUp
+{
+    margin-top: 0;
+}
+
+.login
+{
+    padding: 5px 20px;
+    margin-left: 10px;
+    background-color: rgba(236, 29, 29, 1);
+    border: none;
+    font-weight: 700;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 3px solid rgba(236, 29, 29, 1);
+    transition: all 0.3s ease 0s;
+}
+
+.signUp
+{
+    padding: 5px 20px;
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 3px solid rgba(236, 29, 29, 1);
+    transition: all 0.3s ease 0s;
+}
+
+.sala img
+{
+    width: 40px;
+    position: absolute;
+    top: 8px;
+    left: 1%;
+}
+
+/* تصميم القائمة المنسدلة */
+
+.select_box,
+.select_box2,
+.select_box3
+{
+    display: flex;
+    width: 286px;
+    flex-direction: column;
+    color: #fff;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.4s;
+    order: 1;
+}
+
+.select_box.active,
+.select_box2.active,
+.select_box3.active
+{
+    max-height: 240px;
+    opacity: 1;
+}
+
+.select_box .options_container
+{
+    background: rgba(37, 37, 37, 1);
+    color: #fff;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    overflow: hidden;
+    order: 1;
+}
+
+.select_box2 .options_container_2
+{
+    background: rgba(37, 37, 37, 1);
+    color: #fff;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    overflow: hidden;
+    order: 1;
+}
+
+.select_box3 .options_container_3
+{
+    background: rgba(37, 37, 37, 1);
+    color: #fff;
+    max-height: 0;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    overflow: hidden;
+    order: 1;
+}
+
+
+.selected
+{
+    background: rgba(37, 37, 37, 1);
+    color: #fff;
+    position: relative;
+    order: 0;
+}
+
+.selected_2
+{
+    border-top: 1px solid rgba(236, 29, 29, 1);
+    background: rgba(37, 37, 37, 1);
+    color: #fff;
+    position: relative;
+    order: 0;
+}
+
+.selected_3
+{
+    border-top: 1px solid rgba(236, 29, 29, 1);
+    background: rgba(37, 37, 37, 1);
+    color: #fff;
+    position: relative;
+    order: 0;
+}
+
+.selected::after
+{
+    content: '';
+    background: url('../images/Polygon 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 22px;
+    left: 10px;
+    top: 10px;
+    transition: all 0.4s;
+}
+
+.select_box .options_container.active
+{
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select_box .options_container.active + .selected::after
+{
+    transform: rotateX(180deg);
+    top: -15px;
+}
+
+.select_box .options_container::-webkit-scrollbar
+{
+    display: none;
+}
+
+.select_box .options_container::-webkit-scrollbar-thumb
+{
+    display: none;
+}
+
+/* 2 */
+.selected_2::after
+{
+    content: '';
+    background: url('../images/Polygon 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 22px;
+    left: 10px;
+    top: 10px;
+    transition: all 0.4s;
+}
+
+.select_box2 .options_container_2.active
+{
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select_box2 .options_container_2.active + .selected_2::after
+{
+    transform: rotateX(180deg);
+    top: -15px;
+}
+
+.select_box2 .options_container_2::-webkit-scrollbar
+{
+    display: none;
+}
+
+.select_box2 .options_container_2::-webkit-scrollbar-thumb
+{
+    display: none;
+}
+
+/* 3 */
+.selected_3::after
+{
+    content: '';
+    background: url('../images/Polygon 1.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 100%;
+    width: 22px;
+    left: 10px;
+    top: 10px;
+    transition: all 0.4s;
+}
+
+.select_box3 .options_container_3.active
+{
+    max-height: 240px;
+    opacity: 1;
+    overflow-y: scroll;
+}
+
+.select_box3 .options_container_3.active + .selected_3::after
+{
+    transform: rotateX(180deg);
+    top: -15px;
+}
+
+.select_box3 .options_container_3::-webkit-scrollbar
+{
+    display: none;
+}
+
+.select_box3 .options_container_3::-webkit-scrollbar-thumb
+{
+    display: none;
+}
+
+.select_box .option,
+.selected,
+.select_box2 .option_2,
+.selected_2,
+.select_box3 .option_3,
+.selected_3
+{
+    padding: 12px 24px;
+    cursor: pointer;
+}
+
+.select_box .option:hover,
+.select_box2 .option_2:hover,
+.select_box3 .option_3:hover
+{
+    background: #414b57;
+}
+
+.select_box label,
+.select_box2 label,
+.select_box3 label
+{
+    cursor: pointer;
+}
+
+.select_box .option .radio,
+.select_box2 .option_2 .radio,
+.select_box3 .option_3 .radio
+{
+    display: none;
+}
+
+
+/* تصميم محتوى الصفحة */
+
+.container
+{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.container_product
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.card
+{
+    background: rgba(35, 35, 35, 0.19);
+    width: 370px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.card:hover
+{
+    cursor: pointer;
+    transform: scale(1.03);
+}
+
+.card_image
+{
+    height: 320px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+}
+
+.card_image img
+{
+    width: 350px;
+}
+
+.card h2
+{
+    padding: 10px;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+}
+
+.card p
+{
+    padding: 10px;
+    font-size: 10px;
+    line-height: 1.8;
+    color: #fff;
+}
+
+.card a
+{
+    background-color: rgba(236, 29, 29, 1);
+    color: white;
+    padding: 15px 20px;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px 50px;
+    text-decoration: none;
+    border-radius: 40px;
+}
+
+.wrapper
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper .price_content .price,
+.wrapper .qnty_content .qnty
+{
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+}
+
+/* تصميم نهاية الصفحة Footer */
+
+footer
+{
+    width: 100%;
+    position: absolute;
+    background: rgba(37, 37, 37, 1);
+    color:#fff;
+    padding: 100px 0 30px;
+    border-top-left-radius: 125px;
+    border-top-right-radius: 125px;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.row
+{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col
+{
+    flex-basis: 25%;
+    padding: 10px;
+}
+
+.col:nth-child(2), .col:nth-child(3)
+{
+    flex-basis: 15%;
+}
+
+footer .logo
+{
+    width: 80px;
+    margin-bottom: 30px;
+}
+
+.col h3
+{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email_id
+{
+    width: fit-content;
+    border-bottom: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.soical_icons .fab
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgba(236, 29, 29, 1);
+    background:#fff;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+hr
+{
+    width: 90%;
+    border: 0;
+    border-bottom: 1px solid rgba(236, 29, 29, 1);
+    margin: 20px auto;
+}
+
+.copyright
+{
+    text-align: center;
+    font-weight: 700;
+}
+.copyright .myTires
+{
+    color:rgba(236, 29, 29, 1);
+}

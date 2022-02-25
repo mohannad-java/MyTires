@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tajawal", sans-serif;
+}
+
+html::-webkit-scrollbar
+{
+    width: .5rem;
+}
+
+html::-webkit-scrollbar-thumb
+{
+    background: rgba(236, 29, 29, 1);
+    border-radius: 50px;
+}
+
+body {
+  background: rgba(35, 35, 35, 0.95);
+}
+
+/* تصميم رأس الصفحة */
+header
+{
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10%;
+    background-color: rgba(37, 37, 37, 1);
+}
+
+.logo img {
+  cursor: pointer;
+  width: 150px;
+  position: absolute;
+  top: 0px;
+  right: 3%;
+  margin-top:10px;
+}
+
+.form_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+header .name_company
+{
+  color: #fff;
+  font-weight: 700;
+}
+
+/* تصميم نموذج إضافة منتج */
+
+form .formImg {
+  height: 180px;
+  display: flex;
+  margin: 0 0;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px dashed #fff;
+}
+
+form .formImg img {
+  width: 100px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.formImg :where(p) {
+  color: #fff;
+}
+
+.formImg p {
+  font-size: 16px;
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+.wrapper {
+  overflow: hidden;
+  max-width: 390px;
+  height: 680px;
+  padding: 0;
+  margin-top: 90px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  background: rgba(37, 37, 37, 1);
+}
+
+.wrapper .form_container {
+  width: 100%;
+  overflow: hidden;
+}
+.form_inner form .field {
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  padding: 0 45px;
+}
+
+.form_inner form .field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-right: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  transition: all 0.4s ease;
+}
+
+form .field input[type="submit"] {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-right: 0;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background: #d72a2a;
+  border-radius: 20px;
+}
+
+form label {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0 45px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.wrapper form input {
+  width: 80%;
+  height: 38px;
+  margin: 5px 0 0 5%;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  margin-right: 40px;
+}
+
+.wrapper form textarea {
+  width: 80%;
+  height: 100px;
+  margin-right: 40px;
+  resize: none;
+  outline: none;
+  border: none;
+}
+
+.wrapper .user_details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.wrapper .user_details .input_box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+.wrapper .user_details .input_box .details {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #fff;
+  margin-right: 30px;
+ 
+}
+
+.wrapper .user_details .input_box input {
+  height: 35px;
+  width: 70%;
+  margin-right: 30px;
+  outline: none;
+  border: none;
+  padding-right: 15px;
+  font-size: 16px;
+}
+
+.wrapper .user_details .input_box .textSize
+{
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+#size
+{
+  border: none;
+  outline: none;
+  position: relative;
+  -webkit-appearance: none;
+  padding: 5px 2px;
+  width: 80%;
+  border: 1px solid #E8EAED;
+  margin-top: 5px;
+  background: white;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 150ms ease;
+  color: #000;
+}

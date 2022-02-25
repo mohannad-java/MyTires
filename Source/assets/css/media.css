@@ -1,0 +1,122 @@
+@media(max-width: 1024px)
+{
+    
+    .filtr
+    {
+        right: 23%;
+    }
+}
+
+@media(max-width: 600px)
+{
+    header
+    {
+        padding: 1px 32px;
+    }
+
+    .logo img
+    {
+        width: 80px;
+        margin-top: 20px;
+    }
+
+    .filtr
+    {
+        width: 25px;
+        right: 28%;
+        margin-top: 10px;
+    }
+
+    .login, .signUp
+    {
+        margin-top: 10px;
+        padding: 5px 5px;
+        border: 2px solid rgba(236, 29, 29, 1);
+        margin-left: 40px;
+    }
+
+
+    .sala img
+    {
+        width: 25px;
+        margin-top: 10px;
+    }
+
+    footer
+    {
+        bottom: unset;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .col
+    {
+        flex-basis: 100%;
+    }
+
+    .col:nth-child(2), .col:nth-child(3)
+    {
+        flex-basis: 100%;
+    }
+
+    .full_chat_block
+    {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .chat_bar_collapseible
+    {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .collapsible
+    {
+        width: 100%;
+        border: 0;
+        border-top: 3px solid white;
+        border-radius: 0;
+    }
+
+}
+
+@media(max-width: 500px)
+{
+    .login, .signUp
+    {
+        padding: 1px 5px;
+        font-size: 8px;
+    }
+
+    .signUp
+    {
+        margin-left: 5px;
+    }
+}
+
+@media(max-width: 400px)
+{
+    .login, .signUp
+    {
+        padding: 0 5px;
+    }
+}
+
+@media(max-width: 300px)
+{
+    .login, .signUp
+    {
+        padding: 1px 5px;
+        font-size: 5px;
+        border: 1px solid rgba(236, 29, 29, 1);
+    }
+
+    .container_product
+    {
+       width: 100px;
+    }
+
+}
