@@ -6,7 +6,7 @@
 
     
 
-    <img src="./assets/images/logo.png" title="شعار الموقع الرسمي" alt="Logo" />
+    <img src="./assets/images/logo.png" class="logo" title="شعار الموقع الرسمي" alt="Logo" />
 
 
     <div class="wrapper">
