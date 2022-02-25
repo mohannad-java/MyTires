@@ -14,7 +14,7 @@
 
     <!-- custom css link -->
     <link rel="stylesheet" href="./assets/css/company.css" />
-    <link rel="stylesheet" href="./css/media.css" />
+    <link rel="stylesheet" href="./assets/css/media.css" />
 </head>
 <body>
 
