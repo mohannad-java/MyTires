@@ -217,3 +217,18 @@ form label {
   transition: all 150ms ease;
   color: #000;
 }
+
+.swal-footer
+{
+    text-align: center;
+}
+
+.swal-button
+{
+    background-color: rgba(236, 29, 29, 1);
+}
+
+.swal-button:hover
+{
+    background-color: rgba(236, 29, 29, .5) !important;
+}
