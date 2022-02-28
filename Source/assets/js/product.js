@@ -46,6 +46,11 @@ function showFile()
     }
     else
     {
-        alert("رجاء أدخل صورة من نوع jpeg - jpg - png فقط");
+        swal({
+            title: "أوبااا",
+            text: "يالغالي أستخدم فقط png - jpg - jpeg هذه الصيغ المسموحة فقط",
+            icon: "error",
+            button: "تمام",
+          });
     }
 }
