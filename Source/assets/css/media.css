@@ -1,0 +1,133 @@
+@media(max-width: 1024px)
+{
+    
+    .filtr
+    {
+        right: 23%;
+    }
+}
+
+@media(max-width: 991px)
+{
+    header
+    {
+        padding: 0 20px;
+    }
+
+    .menu_toggle
+    {
+        display: block;
+    }
+
+    header nav
+    {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: rgb(35, 35, 35);
+        top: 50px;
+        right: -100%;
+        transition: 0.5s;
+        z-index: 1000;
+    }
+
+    header nav.active
+    {
+        right: 0;
+    }
+    header nav ul
+    {
+        display: block;
+        text-align: center;
+    }
+    
+
+    header nav ul li a
+    {
+        border-bottom: 1px solid rgba(35, 35, 35, 0.95);
+    }
+    .sala
+    {
+        width: 50px;
+        top: 110px;
+        right: 47%;
+    }
+
+    .name_company
+    {
+        position: relative;
+    }
+}
+
+@media(max-width: 600px)
+{
+
+    .logo img
+    {
+        width: 80px;
+        margin-top: 20px;
+    }
+    
+    .filtr
+    {
+        width: 25px;
+        right: 28%;
+        margin-top: 10px;
+    }
+
+    .sala
+    {
+        right: 43%;
+    }
+
+
+    footer
+    {
+        bottom: unset;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .col
+    {
+        flex-basis: 100%;
+    }
+
+    .col:nth-child(2), .col:nth-child(3)
+    {
+        flex-basis: 100%;
+    }
+
+    .full_chat_block
+    {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .chat_bar_collapseible
+    {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .collapsible
+    {
+        width: 100%;
+        border: 0;
+        border-top: 3px solid white;
+        border-radius: 0;
+    }
+
+}
+
+@media(max-width: 300px)
+{
+
+    .container_product
+    {
+       width: 100px;
+    }
+
+}

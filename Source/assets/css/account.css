@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+}
+
+html::-webkit-scrollbar
+{
+    width: .5rem;
+}
+
+html::-webkit-scrollbar-thumb
+{
+    background: rgba(236, 29, 29, 1);
+    border-radius: 50px;
+}
+
+body
+{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+    background: rgba(35, 35, 35, 0.95);;
+}
+
+.logo
+{
+    width: 298px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper
+{
+    overflow: hidden;
+    max-width: 590px;
+    background: rgba(37, 37, 37, 1);
+    height: 790px;
+    padding: 0;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.wrapper .title_text
+{
+    display: flex;
+    width: 200%;
+}
+
+.wrapper .form_container
+{
+    width: 100%;
+    overflow: hidden;
+}
+
+.form_container .slide_controls
+{
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 10px 0;
+    justify-content: space-between;
+    border: 1px solid solid lightgray;
+}
+
+.slide_controls .slide
+{
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+
+.slide_controls .company
+{
+    color: #fff;
+}
+
+.slide_controls .slide_tab
+{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    right: 0;
+    z-index: 0;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: #D72A2A;
+}
+
+input[type="radio"]
+{
+    display: none;
+}
+
+#user:checked ~ .slide_tab
+{
+    right: 50%;
+}
+
+.form_container .form_inner
+{
+    display: flex;
+    width: 200%;
+}
+
+.form_container .form_inner form
+{
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form_inner form .field
+{
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 45px;
+}
+
+.form_inner form .field input
+{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-right: 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    border-bottom-width: 2px;
+    transition: all 0.4s ease;
+}
+
+.form_inner form .field input:focus
+{
+    border-color: #ff7675;
+}
+
+.form_inner form .pass_link
+{
+    margin-top: 5px;
+    padding: 0 45px;
+}
+
+.form_inner form .company_link,
+.form_inner form .user_link
+{
+    text-align: center;
+    color: #fff;
+    margin-top: 50px;
+}
+
+.form_inner form .pass_link a,
+.form_inner form .company_link a,
+.form_inner form .user_link a
+{
+    color: blue;
+    text-decoration: underline;
+}
+
+form .field input[type="submit"]
+{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding-right: 0;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    margin: 40px 0;
+    background: #D72A2A;
+    border-radius: 20px;
+}
+
+form label
+{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 20px 45px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+@media (max-width: 500px)
+{
+    body
+    {
+        display: block;
+        background: rgba(35, 35, 35, 0.95);;
+    }
+    img
+    {
+        width: 180px;
+        height: auto;
+        margin-right: 50px;
+    }
+}
+@media(max-width: 370px) {
+
+    .wrapper
+    {
+        width:390px;
+        height: auto;
+    }
+  }
