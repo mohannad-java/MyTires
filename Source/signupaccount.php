@@ -1,5 +1,5 @@
 <?php
-include './model/Db.php';
+include './models/Db.php';
 $conn = new Db();
 $conn->connect();
 ?>
@@ -46,7 +46,7 @@ $conn->connect();
 
                 <!-- ############ نموذج إنشاء حساب العميل ########## -->
 
-                <form action="#" class="user" method="post">
+                <form action="./includes/signup.inc.php" class="user" method="post">
                     <label title="يفضل الأسم الثنائي" for="name">أسم العميل</label>
                     <div class="field">
                         <input type="name" id="name" name="name" placeholder="أدخل أسم العميل" required/>
@@ -56,6 +56,8 @@ $conn->connect();
                     <div class="field">
                         <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required/>
                     </div>
+
+                    <input type="hidden" id="role" name="role" value="user">
 
                     <label for="pass">كلمة المرور</label>
                     <div class="field">
@@ -78,7 +80,7 @@ $conn->connect();
 
                 <!-- ############ نموذج إنشاء حساب الشركة ########## -->
 
-                <form action="#" class="company">
+                <form action="./includes/signup.inc.php" class="company" method="post">
 
                     <label for="nameComp">أسم الشركة</label>
                     <div class="field">
@@ -89,6 +91,8 @@ $conn->connect();
                     <div class="field">
                         <input type="email" name="cemail" placeholder="أدخل بريدك الإلكتروني" id="email" required/>
                     </div>
+
+                    <input type="hidden" id="role" name="role" value="company">
 
                     <label for="password">كلمة المرور</label>
                     <div class="field">

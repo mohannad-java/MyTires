@@ -43,6 +43,15 @@ body
     color: #fff;
 }
 
+.message
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 15px;
+}
+
 /* تصميم رأس الصفحة */
 header
 {
@@ -160,6 +169,71 @@ header nav ul li a
     display: none;
 }
 
+.user
+{
+    padding: 5px 40px;
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    border-radius: 40px;
+    cursor: pointer;
+    border: 3px solid rgba(236, 29, 29, 1);
+    transition: all 0.3s ease 0s;
+}
+
+.dropdown
+{
+    position: relative;
+    margin-top: 5px;
+    z-index: 10000;
+}
+
+.dropdown ul
+{
+    position: absolute;
+    background-color: rgba(37, 37, 37, 1);
+    margin-top: 5px;
+    width: 220px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:all 0.4s ease;
+}
+
+.dropdown a
+{
+    color: #fff;
+    font-weight: 700;
+}
+
+.dropdown li
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown li:hover
+{
+    background: rgba(35, 35, 35, 0.95);
+}
+
+.dropdown .user:focus + ul
+{
+    opacity: 1;
+    visibility: inherit;
+    transform: translateY(0);
+}
 /* تصميم القائمة المنسدلة */
 
 .select_box,
@@ -392,6 +466,14 @@ header nav ul li a
     display: none;
 }
 
+.sizing
+{
+    outline: none;
+    border: none;
+    width: 20%;
+    float: left;
+    padding: 5px 10px;
+}
 
 /* تصميم محتوى الصفحة */
 
@@ -413,7 +495,7 @@ header nav ul li a
 .card
 {
     background: rgba(35, 35, 35, 0.19);
-    width: 370px;
+    width: auto;
     margin: 10px;
     border-radius: 15px;
     transition: all 0.3s ease;
@@ -426,7 +508,6 @@ header nav ul li a
 
 .card_image
 {
-    height: 320px;
     margin-bottom: 15px;
     background-color: #fff;
     border-radius: 15px 15px 0 0;
@@ -434,7 +515,10 @@ header nav ul li a
 
 .card_image img
 {
-    width: 350px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
 }
 
 .card h2
@@ -495,21 +579,34 @@ header nav ul li a
     align-items: center;
 }
 
-.wrapper .price_content .price,
-.wrapper .qnty_content .qnty
+.wrapper .price_content
+.wrapper .size_content 
 {
     display: flex;
     align-items: center;
+}
+
+.wrapper .price_content .price,
+.wrapper .size_content .size
+{
+    margin: 0;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 14px;
     color: #fff;
 }
+
+.wrapper .size_content .size span
+{
+    text-align: left;
+}
+
 
 /* تصميم نهاية الصفحة Footer */
 
 footer
 {
     width: 100%;
+    height: 100%;
     position: absolute;
     background: rgba(37, 37, 37, 1);
     color:#fff;

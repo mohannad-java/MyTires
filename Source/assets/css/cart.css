@@ -7,6 +7,7 @@
     box-sizing: border-box;
     font-family: 'Tajawal', sans-serif;
     outline: none;
+    text-decoration: none;
 }
 
 html::-webkit-scrollbar
@@ -23,6 +24,15 @@ html::-webkit-scrollbar-thumb
 body
 {
     background-color: rgba(35, 35, 35, 0.95);
+}
+
+.message
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 15px;
 }
 
 /* تصميم رأس الصفحة */
@@ -50,17 +60,172 @@ header .name_user
   font-weight: 700;
 }
 
+.dropdown
+{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+.selector
+{
+    width: 150px;
+}
+
+#selectField
+{
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(35, 35, 35, 0.95);
+    border-radius: 40px;
+    border: 3px solid rgba(236, 29, 29, 1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+#selectField img
+{
+    width: 12px;
+    transition: transform 0.5s ease;
+}
+
+#list
+{
+    width: 100%;
+    background: rgba(37, 37, 37, 1);
+    border-radius: 10px;
+    display: none;
+}
+
+#list .options
+{
+    width: 100%;
+    padding: 15px 15px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+#list .options:hover
+{
+    background: rgba(35, 35, 35, 0.95);
+}
+
+#list.hide
+{
+    display: block;
+    list-style: none;
+}
+
+.rotate
+{
+    transform: rotate(180deg);
+}
+
+.tm
+{
+    padding: 5px 66px;
+    background-color: rgba(236, 29, 29, 1);
+    border: none;
+    font-weight: 700;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    border: 3px solid rgba(236, 29, 29, 1);
+    border-radius: 40px;
+    display: none;
+}
+
+#tm.active
+{
+    display: block;
+    list-style: none;
+}
+
+.user
+{
+    padding: 5px 40px;
+    margin-left: 15px;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    border-radius: 40px;
+    color: #fff;
+    cursor: pointer;
+    border: 3px solid rgba(236, 29, 29, 1);
+    transition: all 0.3s ease 0s;
+}
+
+.dropdown
+{
+    position: relative;
+    margin-top: 5px;
+    z-index: 10000;
+}
+
+.dropdown ul
+{
+    position: absolute;
+    background-color: rgba(37, 37, 37, 1);
+    margin-top: 140px;
+    width: 220px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:all 0.4s ease;
+}
+
+.dropdown a
+{
+    color: #fff;
+    font-weight: 700;
+}
+
+.dropdown li
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown li:hover
+{
+    background: rgba(35, 35, 35, 0.95);
+}
+
+.dropdown .user:focus + ul
+{
+    opacity: 1;
+    visibility: inherit;
+    transform: translateY(0);
+}
+
 /* تصميم محتوى السلة */
 
 .container
 {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
+    padding: 3rem 2rem;
 }
 
 .container h1
 {
-    padding: 20px 0;
+    padding: 0 0;
     text-align: center;
     color: #fff;
     font-size: 20px;
@@ -123,6 +288,22 @@ header .name_user
     font-size: 24px;
     font-weight: 400;
 }
+
+.product_update
+{
+    position: absolute;
+    bottom: 18px;
+    left: 130px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 3px solid hsla(360, 100%, 52%, 1);
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
 .product_remove
 {
     position: absolute;
@@ -130,10 +311,16 @@ header .name_user
     left: 20px;
     padding: 10px 25px;
     background-color: hsla(360, 100%, 52%, 1);
-    color: white;
     cursor: pointer;
+    color: white;
     border-radius: 25px;
+    font-weight: 700;
     transition: 0.3s ease;
+}
+
+.product_remove span
+{
+    color: white;
 }
 
 .product_quantity
@@ -163,7 +350,7 @@ header .name_user
     flex: 0.25;
     margin-right: 20px;
     padding: 20px;
-    height: 530px;
+    height: 100%;
     background: rgba(37, 37, 37, 1);
     border: none;
     border-radius: 10px;
@@ -217,9 +404,28 @@ header .name_user
     background-color: rgba(236, 29, 29, .5) !important;
 }
 
+@media(max-width: 1220px)
+{
+    .container
+    {
+        max-width: 100%;
+    }
+}
+
 @media(max-width: 700px)
 {
+    .container
+    {
+        max-width: 1200px;
+        padding: 0;
+    }
+
     .remove
+    {
+        display: none;
+    }
+
+    .update
     {
         display: none;
     }
@@ -253,28 +459,24 @@ header .name_user
         margin-right: 0;
         margin-bottom: 20px;
     }
-}
 
-@media(max-width: 1220px)
-{
-    .container
+    .dropdown ul
     {
-        max-width: 95%;
+        width: 120px;
     }
 }
-
 
 @media(max-width: 550px)
 {
 
     .product
     {
-        height: 135px;
+        height: 100%;
     }
 
     .product img
     {
-        height: 150px;
+        height: auto;
         width: 100px;
         background: #fff;
         border-radius: 0;
@@ -282,19 +484,30 @@ header .name_user
 
     .product_name
     {
-        font-size: 25px;
+        font-size: 18px;
         font-weight: 700;
     }
 
     .product_price
     {
-        font-size: 18px;
+        font-size: 14px;
     }
-
+    .product_quantity
+    {
+        font-size: 12px;
+    }
     .product_quantity input
     {
+        width: 30px;
         margin: 5px 0;
     }
+    
+    .product_update
+    {
+        left: 100px;
+        padding: 8px 18px;
+    }
+
 }
 
 @media(max-width: 300px)
@@ -314,7 +527,7 @@ header .name_user
     .product_info
     {
         padding: 2px;
-        width: 100%;
+        width: 50%;
     }
 
     .product_remove
@@ -322,6 +535,13 @@ header .name_user
         left: 5px;
         padding: 8px 18px;
     }
+
+    .product_update
+    {
+        left: 15px;
+        padding: 8px 18px;
+    }
+
 
     .product_quantity input
     {

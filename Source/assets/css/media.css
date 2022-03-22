@@ -46,6 +46,20 @@
     {
         border-bottom: 1px solid rgba(35, 35, 35, 0.95);
     }
+
+    .dropdown ul
+    {
+        margin-right: 70px;
+    }
+    
+        .card_image img
+    {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 300px;
+    }
+
     .sala
     {
         width: 50px;
@@ -83,6 +97,7 @@
 
     footer
     {
+        height: 100%;
         bottom: unset;
         border-top-left-radius: 0;
         border-top-right-radius: 0;

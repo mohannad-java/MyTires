@@ -10,3 +10,10 @@ companyBtn.onclick = (() =>{
 userBtn.onclick = (() =>{
     userForm.style.marginRight = "0%";
 });
+
+const signUpPassword = document.querySelector('form.myAccount #password');
+const signUpConfirmPass = document.querySelector('form.myAccount #confirmPass');
+
+signUpPassword.addEventListener('input', function(){
+    signUpConfirmPass.pattern = `${this.value}`;
+});

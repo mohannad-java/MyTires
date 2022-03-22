@@ -1,7 +1,9 @@
 <?php
-include './model/Db.php';
+include './models/Db.php';
 $conn = new Db();
 $conn->connect();
+session_start();
+include './includes/getCompanyProduct.inc.php';
 ?>
 
 <!DOCTYPE html>
@@ -27,191 +29,120 @@ $conn->connect();
 
     <!-- بداية رأس الصفحة -->
     <header>
+            <?php if (isset($_SESSION['userid'])) {
+            if ($_SESSION['role'] == "user") {
+                header("Location: ./index.php");
+                exit();
+            }
+            ?>
+                <div class="logo">
+                <a href="./company.php"><img src="./assets/images/logo.png" alt="Logo" /></a>
+                </div>
+                    
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="./add_product.php">
+                                <button class="signUp">
+                                إضافة منتج
+                                </button>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="./includes/logout.inc.php">
+                                <button class="login">
+                                    تسجيل خروج
+                                </button>
+                            </a>
+                        </li>
 
-        <div class="logo">
-            <img src="./assets/images/logo.png" alt="شعار الموقع" />
-        </div>
+
+                        <li>
+                            <p class="name_company"><?php echo $_SESSION['username'] ?></p>
+                        </li>
+                    </ul>
+
+
+                </nav>
             
-        <nav>
-            <ul>
-                <li>
-                    <a href="./add_product.php">
-                        <button class="signUp">
-                        إضافة منتج
-                        </button>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="./signout.php">
-                        <button class="login">
-                            تسجيل خروج
-                        </button>
-                    </a>
-                </li>
-
-
-                <li>
-                    <p class="name_company">أسم الشركة</p>
-                </li>
-            </ul>
-
-
-        </nav>
-
-<div class="menu_toggle"> <i class="fa fa-bars"></i> </div>
-
-
+                <div class="menu_toggle"> <i class="fa fa-bars"></i> </div>
+        <?php } else {
+            header("Location: ./loginaccount.php");
+        } ?>
     </header>
     <!-- نهاية رأس الصفحة -->
 
-    <!-- بداية جزء الصفحة الرئيسية -->
+    <!-- بداية جزء محتوى الصفحة  -->
 
     <section class="container">
 
-        <h1 class="heading-title">
-            منتجاتي
-        </h1>
+        <?php
+
+            if (!$products) {
+            } else {
+                echo '<h1 class="heading-title">
+                منتجاتي
+            </h1>';
+            }
+
+            ?>
     
         <div class="container_product">
-    
-            <div class="card">
-                <div class="card_image">
-                    <img src="./assets/images/Tires.png" alt="صورة الكفر" title="صورة الكفر" />
-                </div>
-    
-                <h2 title="أسم الكفر" class="title" >أسم الكفر</h2>
-                <p title="وصف الكفر">
-                    لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
-    
-    أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
-    
-    أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات .
-                </p>
-    
-                <div class="wrapper">
-                    <div class="price_content">
-                        <p class="price" title="السعر">
-                           السعر : <span> 200 </span> ريال
-                        </p>
+        <?php 
+                if (!$products) {
+                    echo "<h1 class='message'> لم تقم بإضافة منتجات بعد </h1>"; 
+                } else {
+                    while($row = $products->fetch_assoc()) {
+            ?>
+                <div class="card">
+                    <div class="card_image">
+                        <!-- <?php echo '<img src="data:image;base64,'.base64_encode($row['pic']).'" alt="صورة الكفر" title="صورة الكفر">'; ?> -->
+                        <img src="./uploads/<?=$row['pic']?>" alt="صورة الكفر" title="صورة الكفر">
                     </div>
-    
-                    <div class="qnty_content">
-                        <p class="qnty" title="الكمية">
-                            الكمية : <span> 1000 </span>
-                        </p>
-                    </div>
+        
+                    <h2 title="أسم الكفر" class="title" ><?php echo $row['name'];?></h2>
+                    <p title="وصف الكفر"><?php echo $row['dec'];?></p>
+        
+                    <div class="wrapper">
+                        <div class="price_content">
+                            <p class="price" title="السعر">
+                            السعر : <span> <?php echo $row['price'];?> </span> ريال
+                            </p>
+                        </div>
+        
+                        <div class="qnty_content">
+                            <p class="qnty" title="الكمية">
+                                الكمية : <span> <?php echo $row['qty'];?> </span>
+                            </p>
+                        </div>
+                        
+                            
 
-                    <div class="qnty_content">
-                        <p class="qnty" title="الكمية">
-                            الحجم : <span> 23 </span> R
-                        </p>
+                        <div class="qnty_content">
+                            <p class="qnty" title="الكمية">
+                            الحجم : R<span><?php echo $row['Ring_Size'];?></span> <span><?php echo $row['size2'];?></span> / <span><?php echo $row['size1'];?></span>
+                            </p>
+                        </div>
+                    </div>
+        
+                    <div class="buttons">
+                        <a href="./update_product.php?tire_id=<?php echo $row['tire_id']; ?>" class="update" title="إضافة إلى السلة">
+                            تعديل
+                        </a>
+                        <a href="./includes/deleteProducts.inc.php?tire_id=<?php echo $row['tire_id']; ?>" class="delete" title="إضافة إلى السلة">
+                            حذف
+                        </a>
                     </div>
                 </div>
-    
-                <div class="buttons">
-                    <a href="./update_product.php" class="update" title="إضافة إلى السلة">
-                        تعديل
-                    </a>
-                    <a href="./delete.php" class="delete" title="إضافة إلى السلة">
-                        حذف
-                    </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card_image">
-                    <img src="./assets/images/Tires.png" alt="صورة الكفر" title="صورة الكفر" />
-                </div>
-    
-                <h2 title="أسم الكفر" class="title" >أسم الكفر</h2>
-                <p title="وصف الكفر">
-                    لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
-    
-    أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
-    
-    أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات .
-                </p>
-    
-                <div class="wrapper">
-                    <div class="price_content">
-                        <p class="price" title="السعر">
-                           السعر : <span> 200 </span> ريال
-                        </p>
-                    </div>
-    
-                    <div class="qnty_content">
-                        <p class="qnty" title="الكمية">
-                            الكمية : <span> 1000 </span>
-                        </p>
-                    </div>
-
-                    <div class="qnty_content">
-                        <p class="qnty" title="الكمية">
-                            الحجم : <span> 23 </span> R
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="buttons">
-                    <a href="./update_product.php" class="update" title="إضافة إلى السلة">
-                        تعديل
-                    </a>
-                    <a href="./delete.php" class="delete" title="إضافة إلى السلة">
-                        حذف
-                    </a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card_image">
-                    <img src="./assets/images/Tires.png" alt="صورة الكفر" title="صورة الكفر" />
-                </div>
-    
-                <h2 title="أسم الكفر" class="title" >أسم الكفر</h2>
-                <p title="وصف الكفر">
-                    لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
-    
-    أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
-    
-    أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات .
-                </p>
-    
-                <div class="wrapper">
-                    <div class="price_content">
-                        <p class="price" title="السعر">
-                           السعر : <span> 200 </span> ريال
-                        </p>
-                    </div>
-    
-                    <div class="qnty_content">
-                        <p class="qnty" title="الكمية">
-                            الكمية : <span> 1000 </span>
-                        </p>
-                    </div>
-
-                    <div class="qnty_content">
-                        <p class="qnty" title="الكمية">
-                            الحجم : <span> 23 </span> R
-                        </p>
-                    </div>
-                </div>
-    
-                <div class="buttons">
-                    <a href="./update_product.php" class="update" title="إضافة إلى السلة">
-                        تعديل
-                    </a>
-                    <a href="./delete.php" class="delete" title="إضافة إلى السلة">
-                        حذف
-                    </a>
-                </div>
-            </div>
-
+            <?php
+                }
+            }  ?>
         </div>
     
         </section>
     
-        <!-- نهاية جزء الصفحة الرئيسية -->
+        <!-- بداية جزء محتوى الصفحة -->
 
     <!-- بداية جزء أسفل الصفحة -->
 
@@ -221,11 +152,11 @@ $conn->connect();
         <div class="row">
 
             <div class="col">
-                <img src="./assets/images/logo.png" width="180" alt="شعار الموقع" />
+                <img src="./assets/images/logo.png" width="200" alt="شعار الموقع" />
 
                 <p>
-                    نقطة بيع بين العميل و الشركة
-                    تطلب كفرك و أنت في بيتك
+                موقع كفراتي وسيط بين العميل و الشركة لتسهيل عملية البيع للعميل يطلب المنتج وهو في بيته نوفر عليه الوقت و الجهد
+
                 </p>
             </div>
             <div class="col">

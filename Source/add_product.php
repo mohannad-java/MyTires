@@ -1,7 +1,9 @@
 <?php
-include './model/Db.php';
+include "./models/Db.php";
 $conn = new Db();
 $conn->connect();
+session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -25,15 +27,22 @@ $conn->connect();
 
      <!-- بداية رأس الصفحة -->
      <header>
+        <?php if (isset($_SESSION['userid'])) {
+            if ($_SESSION['role'] == "user") {
+                header("Location: ./index.php");
+                exit();
+            }
+        ?>
+            <div class="logo">
+            <a href="./company.php"><img src="./assets/images/logo.png" alt="Logo" /></a>
 
-        <div class="logo">
-            <img src="./assets/images/logo.png" alt="Logo" />
+            </div>
+        
 
-        </div>
-      
-
-        <p class="name_company">أسم الشركة</p>
-
+            <p class="name_company"><?php echo $_SESSION['username'] ?></p>
+        <?php } else {
+            header("Location: ./loginaccount.php");
+        } ?>
     </header>
     <!-- نهاية رأس الصفحة -->
 
@@ -44,8 +53,8 @@ $conn->connect();
 
             <div class="form_container">
     
-            <form action="#" method="POST" enctype="multipart/form-data">
-                
+            <form action="./includes/addProducts.inc.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="userid" value="<?php echo $_SESSION['userid']?>">
                 <!-- هنا الصورة -->
                 <div class="formImg">
 
@@ -61,13 +70,13 @@ $conn->connect();
 
                     <label for="nameTires">أسم الكفر</label>
                     <div class="field">
-                        <input type="name" id="nameTires" name="tireName" placeholder="أدخل أسم الكفر" required/>
+                        <input type="name" id="nameTires" name="name" placeholder="أدخل أسم الكفر" required/>
                     </div>
 
                     
                     <label for="nameTires">وصف الكفر</label>
                     <div class="field">
-                        <textarea name="product_dec" cols="30" rows="10" placeholder="أوصف الكفر"></textarea>
+                        <textarea name="dec" cols="30" rows="10" placeholder="أوصف الكفر"></textarea>
                     </div>
                 </div>
 
@@ -80,7 +89,7 @@ $conn->connect();
 
                 <div class="input_box">
                     <span class="details">الكمية</span>
-                    <input type="text" name="" placeholder="1000" required />
+                    <input type="text" name="qty" placeholder="1000" required />
                 </div>
 
             </div>

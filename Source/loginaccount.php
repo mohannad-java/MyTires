@@ -1,5 +1,5 @@
 <?php
-include './model/Db.php';
+include './models/Db.php';
 $conn = new Db();
 $conn->connect();
 ?>
@@ -24,8 +24,8 @@ $conn->connect();
 </head>
 <body>
     
-    <img src="./assets/images/logo.png" class="logo" title="شعار الموقع الرسمي" alt="Logo" />
-
+    
+    <a href="./index.php"><img src="./assets/images/logo.png" class="logo" alt="Logo" /></a>
 
     <div class="wrapper" style="height: 490px;">
 
@@ -46,14 +46,14 @@ $conn->connect();
 
                 <!-- ############ نموذج إنشاء حساب العميل ########## -->
 
-                <form action="#" class="user" method="post">
+                <form action="./includes/login.inc.php" class="user" method="post">
 
                     <label title="يجب وضع بريد حقيقي" for="email">البريد الإلكتروني</label>
 
                     <div class="field">
                         <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required/>
                     </div>
-
+                    <input type="hidden" id="role" name="role" value="user">
                     <label for="pass">كلمة المرور</label>
 
                     <div class="field">
@@ -71,16 +71,16 @@ $conn->connect();
 
                 <!-- ############ نموذج إنشاء حساب الشركة ########## -->
 
-                <form action="#" class="company">
+                <form action="./includes/login.inc.php" class="company" method="post">
 
                     <label for="email">البريد الإلكتروني</label>
                     <div class="field">
-                        <input type="email" name="cemail" placeholder="أدخل بريدك الإلكتروني" id="email" required/>
+                        <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" id="email" required/>
                     </div>
-
+                    <input type="hidden" id="role" name="role" value="company">
                     <label for="password">كلمة المرور</label>
                     <div class="field">
-                        <input type="password" name="cpassword" placeholder="أدخل كلمة المرور" id="password" required/>
+                        <input type="password" name="password" placeholder="أدخل كلمة المرور" id="password" required/>
                     </div>
 
                     <div class="field">

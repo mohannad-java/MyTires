@@ -62,7 +62,7 @@ selected_3.addEventListener("click", () =>{
 optionList_3.forEach(o => {
     o.addEventListener("click", () =>{
         selected_3.innerHTML = o.querySelector("label").innerHTML;
-        optionsContainer_3.classList.remove("active");
+        // optionsContainer_3.classList.remove("active");
     });
 });
 

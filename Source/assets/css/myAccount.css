@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700;800;900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tajawal', sans-serif;
+    outline: none;
+}
+
+html::-webkit-scrollbar
+{
+    width: .5rem;
+}
+
+html::-webkit-scrollbar-thumb
+{
+    background: rgba(236, 29, 29, 1);
+    border-radius: 50px;
+}
+
+body
+{
+    background: rgba(35, 35, 35, 0.95);
+}
+
+a
+{
+    color: #0008ff;
+    transition: all .3s ease;
+    font-weight: 700;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #767ae6;
+}
+
+p
+{
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+}
+.logo
+{
+    width: 298px;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container
+{
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+form
+{
+    width: 30rem;
+    padding: 2rem;
+    border-radius: 18px;
+    background: rgba(37, 37, 37, 1);
+}
+
+.form_group
+{
+    margin-bottom: 14px;
+}
+
+.form_group label
+{
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.input_group
+{
+    width: 100%;
+    position: relative;
+}
+
+.input_group input
+{
+    padding: 12px 40px 12px 20px;
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    transition: all .3s ease;
+}
+
+/* Validation */
+
+.input_group input:focus:valid
+{
+    box-shadow: 0 0 0 4px #7bed9f;
+}
+
+.input_group input:valid:not(:placeholder-shown)
+{
+    border-color: #2ed573;
+}
+
+.input_group input:valid:not(:placeholder-shown) + i
+{
+    color: #2ed573;
+}
+
+.input_group input:invalid:not(:placeholder-shown)
+{
+    border-color: #ff4757;
+}
+
+.input_group input:invalid:not(:placeholder-shown) + i
+{
+    color: #ff4757;
+}
+
+
+.input_group input:focus:invalid
+{
+    box-shadow: 0 0 0 4px #ff6b81;
+}
+
+
+.input_group i
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    pointer-events: none;
+}
+
+.form_group .help_text
+{
+    font-size: 12px;
+    color: rgb(201, 201, 201);
+}
+
+input[type="submit"]
+{
+    padding: 12px 0;
+    display: block;
+    width: 100%;
+    color: #fff;
+    border-radius: 40px;
+    transition: all .3s ease;
+    border: none;
+    background: rgba(215, 42, 42, 1);
+    font-weight: 700;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover
+{
+    background: rgb(223, 94, 94);
+}
