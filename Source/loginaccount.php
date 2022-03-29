@@ -14,6 +14,7 @@ $conn->connect();
     <meta name="keywords" content="كفرات, سيارات, كفراتي, سيارة, تصليح, صيانة, عالم السيارات, بيع, شراء" />
     <link rel="shortcut icon" href="./assets/images/fav.png" type="image/x-icon"/>
     <title>تسجيل دخول | عميل | شركة</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -24,6 +25,53 @@ $conn->connect();
 </head>
 <body>
     
+<?php
+ $error = (isset($_GET['error']) ? $_GET['error'] : '');
+ $success = (isset($_GET['success']) ? $_GET['success'] : '');
+        // Grabbing the data
+      if($error == 'emptyinput')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "الحقول فارغه",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
+      if($error == 'passnotmatch')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "خطأ في كلمة المرور",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
+      if($error == 'usernotfound')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "هذا المستخدم غير موجود",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
+      if($success == 'Done')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "تم انشاء الحساب",
+            icon: "success",
+            button: "تمام",
+          });
+        </script>';
+      }
+
+?>
+  
     
     <a href="./index.php"><img src="./assets/images/logo.png" class="logo" alt="Logo" /></a>
 
@@ -51,13 +99,13 @@ $conn->connect();
                     <label title="يجب وضع بريد حقيقي" for="email">البريد الإلكتروني</label>
 
                     <div class="field">
-                        <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required/>
+                        <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" />
                     </div>
                     <input type="hidden" id="role" name="role" value="user">
                     <label for="pass">كلمة المرور</label>
 
                     <div class="field">
-                        <input type="password" id="pass" name="password" placeholder="أدخل كلمة المرور" required/>
+                        <input type="password" id="pass" name="password" placeholder="أدخل كلمة المرور" />
                     </div>
 
                     <div class="field">
@@ -75,12 +123,12 @@ $conn->connect();
 
                     <label for="email">البريد الإلكتروني</label>
                     <div class="field">
-                        <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" id="email" required/>
+                        <input type="email" name="email" placeholder="أدخل بريدك الإلكتروني" id="email" />
                     </div>
                     <input type="hidden" id="role" name="role" value="company">
                     <label for="password">كلمة المرور</label>
                     <div class="field">
-                        <input type="password" name="password" placeholder="أدخل كلمة المرور" id="password" required/>
+                        <input type="password" name="password" placeholder="أدخل كلمة المرور" id="password" />
                     </div>
 
                     <div class="field">

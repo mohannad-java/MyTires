@@ -62,22 +62,31 @@ if(isset($_GET['tire_id'])) {
                     <input type="file" name="file" class="file_input" hidden/>
                     <img src="./assets/images/add_product.png" width="50px" alt=""/>
                     <p>أختار الصورة</p>
-
+                    <input type="hidden" name="pic" value="<?php echo $row['pic']?>"/>
                 </div>
 
                 <!-- هنا إضافة بيانات الكفر -->
 
-                                        <div class="form_inner">
+                        <div class="form_inner">
 
                         <label for="nameTires">أسم الكفر</label>
                         <div class="field">
-                            <input type="name" id="nameTires" name="name" value ="<?php echo $row['name'];?>" required/>
+                            <!-- <input type="name" id="nameTires" name="name" value ="<?php //echo $row['name'];?>" required/> -->
+                            <div class="select">
+                        <select name="name" id="standard-select">
+                            <option selected disabled>أختر أسم الكفر</option>
+                            <option value="Goodyear">Goodyear</option>
+                            <option value="Hankook">Hankook</option>
+                            <option value="Michelin">Michelin</option>
+                        </select>
+                        </div>
                         </div>
 
 
                         <label for="nameTires">وصف الكفر</label>
                         <div class="field">
-                            <textarea name="dec" cols="30" rows="10" value ="<?php echo $row['dec'];?>"></textarea>
+
+                            <textarea name="dec" cols="30" rows="10"><?php echo $row['dec'];?></textarea>
                         </div>
                         </div>
 

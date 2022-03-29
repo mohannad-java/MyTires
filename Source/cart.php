@@ -65,6 +65,7 @@ include './includes/getCart.inc.php';
         <?php 
         $namep=array();
         $pricep=array();
+        $qt=array();
         $addToOrders=array(array());
         $i=0;
         $z=0;
@@ -82,27 +83,32 @@ include './includes/getCart.inc.php';
                     $addToOrders[$i][$z]=$row['qty'];
                     $namep[$i]= $row['name'];
                     $pricep[$i]= $row['price'];
+                    $qt[$i]=$row['qty'];
                     $i++;
             ?>
-        
+         <form action="./includes/updateCart.inc.php" method="post">
                 <div class="product">
                 <img src="./uploads/<?=$row['pic']?>" alt="صورة الكفر" title="صورة الكفر">
                     <div class="product_info">
                         <h3 class="product_name"><?php echo $row['name'];?></h3>
                         <h4 class="product_price">ريال <?php echo $row['price'];?></h4>
                         <p class="product_quantity">العدد
-                            <input value="1" name="qnt" />
+                            
+                            <input value="<?php echo $row['qty']; ?>" name="qty" />
                         </p>
 
-                        <p class="product_update">
-                        <i class="fas fa-edit"></i>
-                            <a><span class="update">تعديل</span></a>
+                        <p class="product_update">                       
+                       
+                        <input type="hidden" name="tire_id" value="<?php echo $row['tire_id']; ?>">
+                        <!--we need to hide button box (update) ------------------------->
+                        <button type="submit" name="up"><i class="fas fa-edit"></i> <span class="update">تعديل </span></button>
+                         
+                        </form>
+                         
                         </p>
 
                         <p class="product_remove">
-                            <i class="fas fa-trash" aria-hidden="true"></i>
-                            <!--we need to hide blue color on text(delete) ------------------------->
-                            <a style="text-decoration:none" href="./includes/deleteCart.inc.php?tire_id=<?php echo $row['tire_id']; ?>"><span class="remove">حذف</span></a>
+                            <a style="text-decoration:none" href="./includes/deleteCart.inc.php?tire_id=<?php echo $row['tire_id']; ?>">  <i class="fas fa-trash" aria-hidden="true"></i> <span class="remove">حذف</span></a>
                         </p>
                     </div>
                 </div>
@@ -137,11 +143,12 @@ include './includes/getCart.inc.php';
                 <?php 
                 $total=0;
                 for($x=0;$x<$i;$x++){
-                $total+=$pricep[$x];
+                $tot=$pricep[$x]*$qt[$x];
+                $total+=$tot;
                 ?>
                 <p>
                     <span><?php echo $namep[$x]; ?></span>
-                    <span><span><?php echo $pricep[$x]; ?></span> ريال</span>
+                    <span><span><?php echo $tot ?></span> ريال</span>
                 </p>
                 <?php }
                 $vat=$total*0.15;
@@ -149,6 +156,8 @@ include './includes/getCart.inc.php';
                 for($x=0;$x<$i;$x++){
                     $addToOrders[$x][4]=$totalall;
                  }
+                 $_SESSION['addToOrders'] = $addToOrders;
+                 $_SESSION['i'] = $i;
                 ?>
                 
                 <hr class="line" />
@@ -166,8 +175,20 @@ include './includes/getCart.inc.php';
                     <span>المجموع مع الضريبة</span>
                     <span class="price"><span><?php echo $totalall; ?></span> ريال</span>
                 </p>
+                 <!---new code from mohannad <input type="submit" name="add" value="إضافة" />-->
+                <form action="" method="POST" enctype="multipart/form-data">
+                 <?php 
+                for($x=0;$x<=4;$x++){
+                 ?>
+                 <input type="hidden" name="order_id" value="<?php $addToOrders?>">
+                  
+                 <?php
+                    }
+                    ?>
+                </form>
 
-                <a href="#" onclick="alertSweet()">إتمام الطلب</a>
+                  <!---end code from mohannad  onclick="alertSweet()"-->
+                <a href="./includes/addOrder.inc.php" >إتمام الطلب</a>
             </div>
               <?php
              }

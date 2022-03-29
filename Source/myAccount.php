@@ -1,7 +1,8 @@
 <?php
 include './models/Db.php';
 $conn = new Db();
-$conn->connect();
+$conn->connect(); 
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -29,13 +30,13 @@ $conn->connect();
 
     <div class="container">
 
-                <form action="#" method="post" class="myAccount">
-
+                <form action="./includes/updateUser.inc.php" method="post" class="myAccount" enctype="multipart/form-data">
+                <input type="hidden" name="userid" value="<?php echo $_SESSION["userid"]; ?>">
                 <div class="form_group">
                     <label for="name">الأسم</label>
                     <div class="input_group">
 
-                    <input type="text" id="name" name="name" required/>
+                    <input type="text" id="name" name="name" value="<?php echo $_SESSION["username"]; ?>" required/>
                     <i class='bx bxs-user'></i>
                     </div>
                 </div>
@@ -44,11 +45,10 @@ $conn->connect();
                     <label for="email">البريد الإلكتروني</label>
                     <div class="input_group">
 
-                    <input type="email" id="email" name="email" required/>
+                    <input type="email" id="email" name="email" value="<?php echo $_SESSION["email"]; ?>" required/>
                     <i class="bx bx-envelope"></i>
                     </div>
                 </div>
-
                 <div class="form_group">
                     <label for="password">كلمة المرور الجديدة</label>
                     <div class="input_group">

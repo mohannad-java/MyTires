@@ -14,6 +14,7 @@ $conn->connect();
     <meta name="keywords" content="كفرات, سيارات, كفراتي, سيارة, تصليح, صيانة, عالم السيارات, بيع, شراء" />
     <link rel="shortcut icon" href="./assets/images/fav.png" type="image/x-icon"/>
     <title>إنشاء الحساب | عميل | شركة</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -23,7 +24,52 @@ $conn->connect();
     <link rel="stylesheet" href="./assets/css/media.css" />
 </head>
 <body>
-    
+<?php
+ $error = (isset($_GET['error']) ? $_GET['error'] : '');
+
+        // Grabbing the data
+      if($error == 'emptyinput')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "الحقول فارغه",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
+      if($error == 'email')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "البريد الإلكتروني غير صحيح",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
+      if($error == 'emailtaken')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "البريد الإلكتروني مستخدم مسبقا",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
+      if($error == 'passwordmatch')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "كلمة المرور غير متطابقة",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
+
+?>
     <img src="./assets/images/logo.png" class="logo" title="شعار الموقع الرسمي" alt="Logo" />
 
 
@@ -49,24 +95,24 @@ $conn->connect();
                 <form action="./includes/signup.inc.php" class="user" method="post">
                     <label title="يفضل الأسم الثنائي" for="name">أسم العميل</label>
                     <div class="field">
-                        <input type="name" id="name" name="name" placeholder="أدخل أسم العميل" required/>
+                        <input type="name" id="name" name="name" placeholder="أدخل أسم العميل" />
                     </div>
 
                     <label title="يجب وضع بريد حقيقي" for="email">البريد الإلكتروني</label>
                     <div class="field">
-                        <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required/>
+                        <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" />
                     </div>
 
                     <input type="hidden" id="role" name="role" value="user">
 
                     <label for="pass">كلمة المرور</label>
                     <div class="field">
-                        <input type="password" id="pass" name="password" placeholder="أدخل كلمة المرور" required/>
+                        <input type="password" id="pass" name="password" placeholder="أدخل كلمة المرور" />
                     </div>
 
                     <label for="confirmPass" >تأكيد كلمة المرور</label>
                     <div class="field">
-                        <input type="password" id="confirmPass" name="confirmPass" placeholder="أدخل كلمة المرور" required/>
+                        <input type="password" id="confirmPass" name="confirmPass" placeholder="أدخل كلمة المرور" />
                     </div>
 
                     <div class="field">
@@ -84,24 +130,24 @@ $conn->connect();
 
                     <label for="nameComp">أسم الشركة</label>
                     <div class="field">
-                        <input type="text" name="cname" placeholder="أدخل أسم الشركة" id="nameComp" required/>
+                        <input type="text" name="cname" placeholder="أدخل أسم الشركة" id="nameComp" />
                     </div>
 
                     <label for="email">البريد الإلكتروني</label>
                     <div class="field">
-                        <input type="email" name="cemail" placeholder="أدخل بريدك الإلكتروني" id="email" required/>
+                        <input type="email" name="cemail" placeholder="أدخل بريدك الإلكتروني" id="email" />
                     </div>
 
                     <input type="hidden" id="role" name="role" value="company">
 
                     <label for="password">كلمة المرور</label>
                     <div class="field">
-                        <input type="password" name="cpassword" placeholder="أدخل كلمة المرور" id="password" required/>
+                        <input type="password" name="cpassword" placeholder="أدخل كلمة المرور" id="password" />
                     </div>
 
                     <label for="confirmPass">تأكيد كلمة المرور</label>
                     <div class="field">
-                        <input type="password" name="cconfirmPass" placeholder="تأكيد كلمة المرور" id="confirmPass" required/>
+                        <input type="password" name="cconfirmPass" placeholder="تأكيد كلمة المرور" id="confirmPass" />
                     </div>
 
                     <div class="field">

@@ -70,7 +70,16 @@ session_start();
 
                     <label for="nameTires">أسم الكفر</label>
                     <div class="field">
-                        <input type="name" id="nameTires" name="name" placeholder="أدخل أسم الكفر" required/>
+                        <!-- <input type="name" id="nameTires" name="name" placeholder="أدخل أسم الكفر" required/> -->
+                        <div class="select">
+                        <select name="name" id="standard-select">
+                            <option selected disabled>أختر أسم الكفر</option>
+                            <option value="Goodyear">Goodyear</option>
+                            <option value="Hankook">Hankook</option>
+                            <option value="Michelin">Michelin</option>
+                        </select>
+                        </div>
+       
                     </div>
 
                     
