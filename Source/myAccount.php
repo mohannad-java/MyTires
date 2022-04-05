@@ -54,7 +54,6 @@ session_start();
                     <div class="input_group">
 
                     <input type="password" pattern=".{8,}" id="password" name="password" placeholder="أدخل كلمة المرور" required/>
-                        <i class="bx bx-lock-alt"></i>
                     </div>
 
                     <span class="help_text">يجب أن تكون أكثر من 8 أحرف</span>
@@ -65,7 +64,6 @@ session_start();
                     <div class="input_group">
 
                     <input type="password" id="confirmPass" name="confirmPass" placeholder="أكتب كلمة المرور مرة أخرى" required/>
-                        <i class="bx bx-lock-alt"></i>
                 </div>
 
                     <span class="help_text">يجب أن تكون كلمة المرور متوافقة</span>

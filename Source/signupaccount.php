@@ -58,6 +58,17 @@ $conn->connect();
           });
         </script>';
       }
+      if($error == 'password_is_low')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "كلمة المرور قصيرة جدا",
+            text: "يجب أن تكون كلمة المرور أعلى من 8 أحرف و أرقام",
+            icon: "error",
+            button: "تمام",
+          });
+        </script>';
+      }
       if($error == 'passwordmatch')
       {
         echo '<script type="text/javascript">

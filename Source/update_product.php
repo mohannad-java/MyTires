@@ -60,8 +60,13 @@ if(isset($_GET['tire_id'])) {
                 <div class="formImg">
 
                     <input type="file" name="file" class="file_input" hidden/>
-                    <img src="./assets/images/add_product.png" width="50px" alt=""/>
-                    <p>أختار الصورة</p>
+                    <img src="./uploads/<?php echo $row['pic']?>" class="updateImage" alt=""/>
+                    <?php
+                        if(!$row['pic'])
+                        {
+                            echo "<p>أختار الصورة</p>";
+                        }
+                    ?>
                     <input type="hidden" name="pic" value="<?php echo $row['pic']?>"/>
                 </div>
 
@@ -74,7 +79,7 @@ if(isset($_GET['tire_id'])) {
                             <!-- <input type="name" id="nameTires" name="name" value ="<?php //echo $row['name'];?>" required/> -->
                             <div class="select">
                         <select name="name" id="standard-select">
-                            <option selected disabled>أختر أسم الكفر</option>
+                            <option selected disabled><?php echo $row['name'];?></option>
                             <option value="Goodyear">Goodyear</option>
                             <option value="Hankook">Hankook</option>
                             <option value="Michelin">Michelin</option>

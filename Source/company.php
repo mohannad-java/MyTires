@@ -17,6 +17,7 @@ include './includes/getCompanyProduct.inc.php';
     <link rel="shortcut icon" href="./images/fav.png" type="image/x-icon"/>
     <link rel="shortcut icon" href="./assets/images/fav.png" type="image/x-icon"/>
     <title>كفراتي | الصفحة الرئيسية</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
@@ -74,6 +75,22 @@ include './includes/getCompanyProduct.inc.php';
     <!-- نهاية رأس الصفحة -->
 
     <!-- بداية جزء محتوى الصفحة  -->
+    <?php
+//---------------------------------------------------------------------------
+ $success = (isset($_GET['success']) ? $_GET['success'] : '');
+        // Grabbing the data
+      if($success == 'addProducts')
+      {
+        echo '<script type="text/javascript">
+        swal({
+            title: "تم إضافة المنتج",
+            icon: "success",
+            button: "تمام",
+          });
+        </script>';
+      }
+//---------------------------------------------------------------------------
+?>
 
     <section class="container">
 

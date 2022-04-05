@@ -90,7 +90,7 @@ include './includes/getProduct.inc.php';
 
             
         <?php } else { ?>
-            <a href="index.html" class="logo">
+            <a href="index.php" class="logo">
                 <img src="./assets/images/logo.png" alt="Logo" />
             </a>
             
@@ -374,7 +374,7 @@ include './includes/getProduct.inc.php';
                         <input type="text" name="tire_id" value="<?php echo $value['tire_id'];?>"hidden/>
                         <input type="text" name="image" value="<?php echo $value['pic'];?>"hidden/>
                         <input type="text" name="name" value="<?php echo $value['name'];?>"hidden/>
-                        <input type="text" name="dec" value="<?php echo $value['dec'];?>"hidden/>
+                        <textarea type="text" name="dec" hidden><?php echo $value['dec'];?></textarea>
                         <input type="text" name="price" value="<?php echo $value['price'];?>"hidden/>
                         <input type="text" name="ring" value="<?php echo $value['Ring_Size'];?>"hidden/>
                         <input type="text" name="size1" value="<?php echo $value['size1'];?>"hidden/>

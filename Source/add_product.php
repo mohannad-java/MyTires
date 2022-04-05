@@ -16,8 +16,6 @@ session_start();
     <meta name="keywords" content="كفرات, سيارات, كفراتي, سيارة, تصليح, صيانة, عالم السيارات, بيع, شراء" />
     <link rel="shortcut icon" href="./assets/images/fav.png" type="image/x-icon" />
     <title>كفراتي | إضافة منتج</title>
-
-    <link rel="stylesheet" href="./assets/css/product.css" />
     
     <!-- custom css link -->
     <link rel="stylesheet" href="./assets/css/product.css" />
