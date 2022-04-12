@@ -6,7 +6,7 @@
         $password = $_POST["password"];
         $role = $_POST['role'];
 
-        // Instantiate SignupController class
+        // Instantiate LoginController class
         include "../models/Db.php";
         // include "../models/login.php";
         include "../controllers/loginContr.php";

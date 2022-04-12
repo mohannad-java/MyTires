@@ -198,10 +198,20 @@ form label
     font-weight: bold;
 }
 
+.swal-footer
+{
+    text-align: center;
+}
 
+.swal-button
+{
+    background-color: rgba(236, 29, 29, 1);
+}
 
-
-
+.swal-button:hover
+{
+    background-color: rgba(236, 29, 29, .5) !important;
+}
 
 
 @media (max-width: 500px)

@@ -73,6 +73,14 @@ form .formImg img {
   object-fit: cover;
 }
 
+form .formImg .updateImage
+{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .formImg :where(p) {
   color: #fff;
 }
@@ -103,6 +111,69 @@ form .formImg img {
   width: 100%;
   margin-top: 10px;
   padding: 0 45px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+
+  z-index: 1;
+
+  outline: none;
+}
+
+.select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 1px solid #393939;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  margin-right: 25px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background: linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+}
+
+.select::after {
+
+    content: "";
+    justify-self: end;
+    width: 0.8em;
+    height: 0.5em;
+    background-color: rgba(236, 29, 29, 1);
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+}
+
+.select {
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+
+  min-width: 15ch;
+  max-width: 30ch;
+}
+select,
+.select::after {
+  grid-area: select;
+}
+
+.select::after {
+  content: "";
+  justify-self: end;
 }
 
 .form_inner form .field input {

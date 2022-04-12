@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Tajawal', sans-serif;
+    list-style: none;
 }
 
 a, button
@@ -30,10 +31,19 @@ html::-webkit-scrollbar-thumb
     border-radius: 50px;
 }
 
+html
+{
+    height: 100%;
+}
 body
 {
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem;
+    min-height: 100%;
     background-color: rgba(35, 35, 35, 0.95);
 }
+
 
 .heading-title
 {
@@ -80,6 +90,19 @@ header
     position: absolute;
     top: 8px;
     right: 17%;
+}
+
+.close1
+{
+
+    padding: 5px 20px;
+    margin-left: 690px;
+    background-color: transparent;
+    border: none;
+    font-weight: 700;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
 
 .search
@@ -248,6 +271,8 @@ header nav ul li a
     transition: all 0.4s;
     order: 1;
     display: none;
+    z-index: 100000;
+
 }
 
 .select_box.active,
@@ -305,7 +330,7 @@ header nav ul li a
 
 .selected_2
 {
-    border-top: 1px solid rgba(236, 29, 29, 1);
+    border-top:none;
     background: rgba(37, 37, 37, 1);
     color: #fff;
     position: relative;
@@ -464,6 +489,7 @@ header nav ul li a
 .select_box3 .option_3 .radio
 {
     display: none;
+    user-select: text;
 }
 
 .sizing
@@ -482,6 +508,7 @@ header nav ul li a
     max-width: 1300px;
     margin: 0 auto;
     padding: 3rem 2rem;
+    padding-bottom: 18rem;
 }
 
 .container_product
@@ -519,6 +546,7 @@ header nav ul li a
     margin-left: auto;
     margin-right: auto;
     width: 300px;
+    border-radius: 15px 15px 0 0;
 }
 
 .card h2
@@ -600,14 +628,27 @@ header nav ul li a
     text-align: left;
 }
 
+.like_btn
+{
+    padding: 15px 20px;
+    /* background: rgba(236, 29, 29, .5); */
+    font-size: 30px;
+    /* border-radius: 40px; */
+    border: none;
+    outline: none;
+    color: #e8efff;
+    cursor: pointer;
+}
 
 /* تصميم نهاية الصفحة Footer */
 
 footer
 {
-    width: 100%;
-    height: 100%;
     position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
     background: rgba(37, 37, 37, 1);
     color:#fff;
     padding: 100px 0 30px;
@@ -687,4 +728,19 @@ hr
 .copyright .myTires
 {
     color:rgba(236, 29, 29, 1);
+}
+
+.swal-footer
+{
+    text-align: center;
+}
+
+.swal-button
+{
+    background-color: rgba(236, 29, 29, 1);
+}
+
+.swal-button:hover
+{
+    background-color: rgba(236, 29, 29, .5) !important;
 }

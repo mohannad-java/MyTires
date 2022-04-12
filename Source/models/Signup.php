@@ -9,7 +9,7 @@
 
             
             if ($this->connect()->query($sql) === TRUE) {
-                header("Location: ../loginaccount.php");
+                header("Location: ../loginaccount.php?success=Done");
                 exit();
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;

@@ -8,6 +8,8 @@
         if ($products === false) {
             return false;
         } else {
-            return $products;
+            // session_start();
+            $_SESSION['products'] = $products;
         }
+        
 ?>

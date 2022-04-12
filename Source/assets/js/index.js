@@ -12,23 +12,23 @@ const search = document.querySelector(".search");
 // برمجة القائمة المنسدلة
 
 //1
-const selected = document.querySelector(".selected");
+// const selected = document.querySelector(".selected");
 
-const optionsContainer = document.querySelector(".options_container");
+// const optionsContainer = document.querySelector(".options_container");
 
-const optionList = document.querySelectorAll(".option");
+// const optionList = document.querySelectorAll(".option");
 
-selected.addEventListener("click", () =>{
-    optionsContainer.classList.toggle("active");
-});
+// selected.addEventListener("click", () =>{
+//     optionsContainer.classList.toggle("active");
+// });
 
-optionList.forEach(o => {
-    o.addEventListener("click", () =>{
-        selected.innerHTML = o.querySelector("label").innerHTML;
-        optionsContainer.classList.remove("active");
+// optionList.forEach(o => {
+//     o.addEventListener("click", () =>{
+//         selected.innerHTML = o.querySelector("label").innerHTML;
+//         optionsContainer.classList.remove("active");
         
-    });
-});
+//     });
+// });
 
 //2
 const selected_2 = document.querySelector(".selected_2");
@@ -43,8 +43,10 @@ selected_2.addEventListener("click", () =>{
 
 optionList_2.forEach(o => {
     o.addEventListener("click", () =>{
-        selected_2.innerHTML = o.querySelector("label").innerHTML;
-        optionsContainer_2.classList.remove("active");
+        selected_2.innerHTML        = o.querySelector("label").innerHTML;
+        selected_2.style.fontWeight = "700";
+        selected_2.style.color      = "#ff6b81";
+        // optionsContainer_2.classList.remove("active");
     });
 });
 

@@ -26,6 +26,12 @@
                 header("Location: ../signupaccount.php?error=email");
                 exit();
             }
+
+            if ($this->pwdCheck() == false) {
+                // echo "Password don't match!";
+                header("Location: ../signupaccount.php?error=password_is_low");
+                exit();
+            }
             if ($this->pwdMatch() == false) {
                 // echo "Password don't match!";
                 header("Location: ../signupaccount.php?error=passwordmatch");
@@ -74,6 +80,16 @@
             return $result;
         }
 
+        private function pwdCheck() {
+            $result;
+            if(strlen($this->password) <= 7) {
+                $result = false;
+            } else {
+                $result = true;
+            }
+            return $result;
+        }
+        
         private function uidTakenCheck() {
             $result;
             if(!$this->checkUser($this->email)) {

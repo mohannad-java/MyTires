@@ -9,6 +9,7 @@
         $image_size = $_FILES['file']['size'];
         $tmp_name = $_FILES['file']['tmp_name'];
         $erorr = $_FILES['file']['error'];
+        $oldimage_name = $_POST['pic'];
         $name = $_POST['name'];
         $dec = $_POST['dec'];
         $price = $_POST['price'];
@@ -22,7 +23,7 @@
         include "../models/Db.php";
         include "../controllers/updateProductsContr.php";
 
-        $update = new UpdateProductContr($userid, $tireid, $image_name, $image_size, $tmp_name, $erorr, $name, $dec, $price, $size1, $size2, $ring, $qty);
+        $update = new UpdateProductContr($userid, $tireid, $image_name, $image_size, $tmp_name, $erorr, $oldimage_name, $name, $dec, $price, $size1, $size2, $ring, $qty);
 
         $update->editProduct();
 

@@ -52,7 +52,7 @@
         margin-right: 70px;
     }
     
-        .card_image img
+    .card_image img
     {
         display: flex;
         margin-left: auto;
@@ -70,6 +70,19 @@
     .name_company
     {
         position: relative;
+    }
+    .container
+    {
+        padding-bottom: auto;
+    }
+
+    .close1
+    {
+        margin-top: 5px;
+        padding: 5px 15px;
+        margin-left: 130px;
+        border: none;
+        font-weight: normal;
     }
 }
 
@@ -97,7 +110,6 @@
 
     footer
     {
-        height: 100%;
         bottom: unset;
         border-top-left-radius: 0;
         border-top-right-radius: 0;

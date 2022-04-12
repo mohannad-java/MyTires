@@ -24,6 +24,7 @@ include './includes/getProduct.inc.php';
 
     <!-- Font awesome cdn link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- custom css link -->
     <link rel="stylesheet" href="./assets/css/index.css" />
@@ -68,9 +69,9 @@ include './includes/getProduct.inc.php';
                 </li>
 
                 <div class="dropdown">
-                            <button class="user">
-                            <?php echo $_SESSION['username'] ?>
-                            </button>
+                    <button class="user">
+                        <?php echo $_SESSION['username'] ?>
+                    </button>
                     <ul>
                         <li><a href="./myAccount.php">بياناتي</a></li>
                         <li><a href="./myCart.php">طلباتي</a></li>
@@ -90,7 +91,7 @@ include './includes/getProduct.inc.php';
 
             
         <?php } else { ?>
-            <a href="index.php" class="logo">
+            <a href="index.html" class="logo">
                 <img src="./assets/images/logo.png" alt="Logo" />
             </a>
             
@@ -164,7 +165,7 @@ include './includes/getProduct.inc.php';
 
             <div class="options_container_2">
 
-                    <div class="option_2">
+                <div class="option_2">
                     <input type="radio" class="radio" id="Goodyear" name="tiername"  value="Goodyear"/> 
 
                     <label for="Goodyear">Goodyear</label>
@@ -323,6 +324,14 @@ include './includes/getProduct.inc.php';
                                 
                             </div>
                         </div>
+
+                    <p class="like_btn">
+                        <span id="icon">
+                        <i class='bx bx-like'></i>
+                        </span>
+                        <span id="count">0</span> إعجاب
+                    </p>
+                        
                         <input type="text" name="userid" value="<?php echo $userid;?>"hidden/>
                         <input type="text" name="tire_id" value="<?php echo $value['2'];?>"hidden/>
                         <input type="text" name="image" value="<?php echo $value['3'];?>"hidden/>
@@ -370,6 +379,14 @@ include './includes/getProduct.inc.php';
                                 
                             </div>
                         </div>
+
+                    <p class="like_btn" style="font-size: 15px;">
+                        <span id="icon">
+                        <i class='bx bx-like'></i>
+                        </span>
+                        <span id="count"><?php echo $value['likes'];?></span> 
+                    </p>
+
                         <input type="text" name="userid" value="<?php echo $userid;?>"hidden/>
                         <input type="text" name="tire_id" value="<?php echo $value['tire_id'];?>"hidden/>
                         <input type="text" name="image" value="<?php echo $value['pic'];?>"hidden/>

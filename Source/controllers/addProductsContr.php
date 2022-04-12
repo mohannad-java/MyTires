@@ -108,7 +108,7 @@
             elseif (!preg_match("/^[0-9]*$/", $this->ring)) {
                 $result = false;
             }
-            elseif (!preg_match("/^[0-9]*$/", $this->price)) {
+            elseif (!is_numeric($this->price)) {
                 $result = false;
             }
             else {

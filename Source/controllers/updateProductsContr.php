@@ -9,6 +9,7 @@
         private $tmp_name;
         private $image_erorr;
         private $new_image_name;
+        private $oldimage_name;
         private $name;
         private $dec;
         private $price;
@@ -17,13 +18,14 @@
         private $ring;
         private $qty;
 
-        public function __construct($userid, $tireid, $image_name, $image_size, $tmp_name, $image_erorr, $name, $dec, $price, $size1,$size2, $ring, $qty) {
+        public function __construct($userid, $tireid, $image_name, $image_size, $tmp_name, $image_erorr, $oldimage_name, $name, $dec, $price, $size1,$size2, $ring, $qty) {
             $this->userid = $userid;
             $this->tireid = $tireid;
             $this->image_name = $image_name;
             $this->image_size = $image_size;
             $this->tmp_name = $tmp_name;
             $this->image_erorr = $image_erorr;
+            $this->oldimage_name = $oldimage_name;
             $this->name = $name;
             $this->dec = $dec;
             $this->price = $price;
@@ -62,9 +64,11 @@
         // inputs handler
 
         private function emptyInput() {
-            
+                if(empty($this->image_name)) {
+                    $this->updateProduct($this->userid, $this->tireid, $this->oldimage_name, $this->name, $this->dec, $this->price, $this->size1, $this->size2, $this->ring, $this->qty);
+                }
                 $result;
-                if (empty($this->userid) || empty($this->tireid) || empty($this->image_name) || empty($this->name) || empty($this->price) 
+                if (empty($this->userid) || empty($this->tireid) || empty($this->name) || empty($this->price) 
                 || empty($this->size1) || empty($this->size2) || empty($this->dec) || empty($this->ring) || empty($this->qty)) {
                     $result = false;
                 } else {
@@ -110,7 +114,7 @@
             elseif (!preg_match("/^[0-9]*$/", $this->ring)) {
                 $result = false;
             }
-            elseif (!preg_match("/^[0-9]*$/", $this->price)) {
+            elseif (!is_numeric($this->price)) {
                 $result = false;
             }
             else {

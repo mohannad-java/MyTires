@@ -33,6 +33,7 @@
                 $_SESSION["userid"] = $user['user_id'];
                 $_SESSION["username"] = $user['name'];
                 $_SESSION["role"] = $user['role'];
+                $_SESSION['email'] = $user['email'];
             } else {
                 header("Location: ../loginaccount.php?error=passnotmatch");
                 exit();
